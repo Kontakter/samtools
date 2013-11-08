@@ -42,8 +42,12 @@ all-recur lib-recur clean-recur cleanlocal-recur install-recur:
 
 all:$(PROG)
 
+
 git-stamp:
 		make VERSION="-DVERSION='\\\"`git describe --always --dirty`\\\"'"
+
+test:
+
 
 .PHONY:all lib clean cleanlocal
 .PHONY:all-recur lib-recur clean-recur cleanlocal-recur install-recur

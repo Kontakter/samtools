@@ -25,6 +25,8 @@ all-recur lib-recur clean-recur cleanlocal-recur install-recur:
 
 all:$(PROG)
 
+test:
+
 lib:libbcf.a
 
 libbcf.a:$(LOBJS)
