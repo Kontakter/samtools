@@ -96,8 +96,15 @@ config.h:
 	echo '#define HAVE_CURSES' >> $@
 	echo '#define HAVE_CURSES_H' >> $@
 
+
+# ???? 
 include config.mk
 
+# Adjust $(HTSDIR) to point to your top-level htslib directory
+HTSDIR = htslib
+include $(HTSDIR)/htslib.mk
+HTSLIB = $(HTSDIR)/libhts.a
+BGZIP  = $(HTSDIR)/bgzip
 
 PACKAGE_VERSION = 1.3
 
