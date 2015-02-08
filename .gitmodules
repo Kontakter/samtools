@@ -1,0 +1,6 @@
+[submodule "bcftools"]
+	path = bcftools
+	url = git@github.com:Kontakter/bcftools.git
+[submodule "htslib"]
+	path = htslib
+	url = git@github.com:Kontakter/htslib.git
