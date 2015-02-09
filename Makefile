@@ -78,8 +78,8 @@ BUILT_TEST_PROGRAMS = \
 	test/split/test_parse_args \
 	test/vcf-miniview
 
-all: $(PROGRAMS) $(BUILT_MISC_PROGRAMS) $(BUILT_TEST_PROGRAMS)
-
+all: $(PROGRAMS) $(BUILT_MISC_PROGRAMS) $(BUILT_TEST_PROGRAMS) $(HTSDIR) $(BCFTOOLS)
+	cd bcftools && make
 
 # Adjust $(HTSDIR) to point to your top-level htslib directory
 HTSDIR = htslib
@@ -280,13 +280,11 @@ testclean:
 mostlyclean: testclean
 	-rm -f *.o misc/*.o test/*.o test/*/*.o version.h
 
-clean: mostlyclean
+clean: mostlyclean clean-htslib
 	-rm -f $(PROGRAMS) libbam.a $(BUILT_MISC_PROGRAMS) $(BUILT_TEST_PROGRAMS)
 
 distclean: clean
 	-rm -f TAGS
-
-clean-all: clean clean-htslib
 
 
 tags:
