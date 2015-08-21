@@ -32,6 +32,7 @@ set +o | grep pipefail >/dev/null && set -o pipefail
 # just enough to pass the tests.
 REF_PATH=`pwd`/md5
 export REF_PATH
+export LANGUAGE=en
 
 # Executes a single test and compares against the expected output
 run_test() {
