@@ -78,9 +78,6 @@ BUILT_TEST_PROGRAMS = \
 	test/split/test_parse_args \
 	test/vcf-miniview
 
-# ????
-#all: $(PROGRAMS) $(BUILT_MISC_PROGRAMS) $(BUILT_TEST_PROGRAMS)
-
 # TODO Use configure or htslib.pc to add -rdynamic/-ldl conditionally
 ALL_CPPFLAGS = $(DFLAGS) -I. $(HTSLIB_CPPFLAGS) $(CPPFLAGS)
 ALL_LDFLAGS  = -rdynamic $(HTSLIB_LDFLAGS) $(LDFLAGS)
@@ -98,7 +95,6 @@ config.h:
 	echo '#define HAVE_CURSES_H' >> $@
 
 
-# ???? 
 include config.mk
 
 all: $(PROGRAMS) $(BUILT_MISC_PROGRAMS) $(BUILT_TEST_PROGRAMS) $(HTSDIR) $(BCFTOOLS)
